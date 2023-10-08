@@ -30,6 +30,12 @@
                         <li class="nav-item"><a class="nav-link" href="{% url 'Programadores'%}">Programadores</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Lenguajes'%}">Lenguajes</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Institutos'%}">Institutos</a></li>
+                        {% if request.user.is_authenticated %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'Logout'%}">Cerrar Sesion</a></li>
+                        {% else %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'Registro'%}">Registrarse</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'Login'%}">Iniciar Sesion</a></li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
